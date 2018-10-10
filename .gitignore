@@ -1,0 +1,5 @@
+MyDApp/
+DApp/.env
+
+__pycache__/
+DApp/db.sqlite3
