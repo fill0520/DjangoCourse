@@ -81,113 +81,26 @@ logo and array of contacts and branches)
 + Request (application/json)
 
         {
-            "id": {
-                "type": "integer",
-                "required": false,
-                "read_only": true,
-                "label": "Id"
-            },
-            "name": {
-                "type": "string",
-                "required": true,
-                "read_only": false,
-                "label": "Name",
-                "max_length": 200
-            },
-            "description": {
-                "type": "string",
-                "required": true,
-                "read_only": false,
-                "label": "Description",
-                "max_length": 200
-            },
-            "category": {
-                "type": "field",
-                "required": false,
-                "read_only": true,
-                "label": "Category"
-            },
-            "logo": {
-                "type": "string",
-                "required": true,
-                "read_only": false,
-                "label": "Logo",
-                "max_length": 200
-            },
-            "contacts": {
-                "type": "field",
-                "required": true,
-                "read_only": false,
-                "label": "Contacts",
-                "child": {
-                    "type": "nested object",
-                    "required": true,
-                    "read_only": false,
-                    "children": {
-                        "type": {
-                            "type": "choice",
-                            "required": false,
-                            "read_only": false,
-                            "label": "Type",
-                            "choices": [
-                                {
-                                    "value": "EMAIL",
-                                    "display_name": "EMAIL"
-                                },
-                                {
-                                    "value": "FACEBOOK",
-                                    "display_name": "FACEBOOK"
-                                },
-                                {
-                                    "value": "PHONE",
-                                    "display_name": "PHONE"
-                                }
-                            ]
-                        },
-                        "value": {
-                            "type": "string",
-                            "required": true,
-                            "read_only": false,
-                            "label": "Value",
-                            "max_length": 100
-                        }
-                    }
-                }
-            },
-            "branches": {
-                "type": "field",
-                "required": true,
-                "read_only": false,
-                "label": "Branches",
-                "child": {
-                    "type": "nested object",
-                    "required": true,
-                    "read_only": false,
-                    "children": {
-                        "latitude": {
-                            "type": "string",
-                            "required": true,
-                            "read_only": false,
-                            "label": "Latitude",
-                            "max_length": 50
-                        },
-                        "longtitude": {
-                            "type": "string",
-                            "required": true,
-                            "read_only": false,
-                            "label": "Longtitude",
-                            "max_length": 50
-                        },
-                        "address": {
-                            "type": "string",
-                            "required": true,
-                            "read_only": false,
-                            "label": "Address",
-                            "max_length": 200
-                        }
-                    }
-                }
-            }
+            "name": "",
+            "description": "",
+            "logo": "",
+            "contacts": [
+                {
+                    "choises": [
+                        "EMAIL",
+                        "FACEBOOK",
+                        "PHONE"
+                    ],
+                    "value": ""
+                } 
+            ],
+            "branches": [
+                {
+                    "latitude": "",
+                    "longtitude": "",
+                    "address": ""
+                }            
+            ]
         }
 
 + Response 201 (application/json)
