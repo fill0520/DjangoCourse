@@ -21,7 +21,7 @@ class Branch(models.Model):
 	latitude = models.CharField(max_length=50)
 	longtitude = models.CharField(max_length=50)
 	address = models.CharField(max_length=200)
-	branch = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='branches')
+	course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='branches')
 
 ch = (
 	('EMAIL','EMAIL'),
@@ -32,7 +32,7 @@ ch = (
 class Contact(models.Model):
 	type = models.CharField(choices=ch, max_length=10, default='PHONE')
 	value = models.CharField(max_length=100)
-	contact = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='contacts')
+	course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='contacts')
 	def __str__(self):
 		return self.type
 

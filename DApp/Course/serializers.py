@@ -40,8 +40,10 @@ class CourseSerializer(serializers.HyperlinkedModelSerializer):
 		course_con = validated_data.pop('contacts')
 		course = Course.objects.create(**validated_data, category=Category.objects.get(pk=1))
 		for data in course_con:
-			Contact.objects.create(contact=course, **data)
+			Contact.objects.create(course=course, **data)
 		for data in course_br:
-			Branch.objects.create(branch=course, **data)
+			Branch.objects.create(course=course, **data)
 		return course
-	
+
+
+		
