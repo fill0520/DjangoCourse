@@ -56,7 +56,7 @@ manage.py runserver
 
 Then open [this link](http://127.0.0.1:8000/)
 
-<<<<<<< HEAD
+
 ##Necessery
 
 Documentation to project [in Apiary](https://djangoco.docs.apiary.io/#)
@@ -64,12 +64,3 @@ Documentation to project [in Apiary](https://djangoco.docs.apiary.io/#)
 ###End
 
 **That's all. Congratulations!**
-=======
-## Necessery
-
-Documentation to project [in Apiary](https://djangoco.docs.apiary.io/#)
-
-### End
-
-**That's all. Congratulations!**
->>>>>>> 7e7d666123a3bc9cc32d00c887b1df0ac33f3a10
