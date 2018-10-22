@@ -1,0 +1,137 @@
+FORMAT: 1A
+HOST: http://localhost:8000/
+
+# DjangoCourse
+
+Simple REST API for courses using Django and Django Rest Framework.
+
+## Course Collection [/course]
+
+### List of ALL courses [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "English zone",
+                "description": "Миссия English Zone заключается в том, чтобы помочь людям раскрыть весь их потенциал.",
+                "category": "Language course",
+                "logo": "http://www.answersfrom.com/wp-content/uploads/2011/09/Not-talanted-but-curious.jpg",
+                "contacts": [
+                    {
+                        "type": "PHONE",
+                        "value": "0555123456"
+                    },
+                    {
+                        "type": "EMAIL",
+                        "value": "example@gmail.com"
+                    }
+                ],
+                "branches": [
+                    {
+                        "latitude": "42.847971",
+                        "longtitude": "74.586733",
+                        "address": "Manas 58/ Aini - right next to the Manas university"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Book lovers",
+                "description": "This is a place where you find your couple",
+                "category": "Language course",
+                "logo": "http://www.google.com/pictures/ex.jpg",
+                "contacts": [
+                    {
+                        "type": "PHONE",
+                        "value": "0555111222"
+                    },
+                    {
+                        "type": "EMAIL",
+                        "value": "qwerty@gmail.com"
+                    },
+                    {
+                        "type": "FACEBOOK",
+                        "value": "qwerty.facebook.com"
+                    }
+                ],
+                "branches": [
+                    {
+                        "latitude": "42.847971",
+                        "longtitude": "74.586733",
+                        "address": "Manas university"
+                    },
+                    {
+                        "latitude": "90.8448471",
+                        "longtitude": "102.456733",
+                        "address": "Бишкек, Юг-2 дом 15а Советская/Горького"
+                    }
+                ]
+            }
+        ]
+
+### Create a New Course [POST]
+
+You may create your own course using this action. It takes a JSON
+object containing all information about course (name, description,
+logo and array of contacts and branches)
+
+
++ Request (application/json)
+
+        {
+            "name": "",
+            "description": "",
+            "logo": "",
+            "contacts": [
+                {
+                    "choises": [
+                        "EMAIL",
+                        "FACEBOOK",
+                        "PHONE"
+                    ],
+                    "value": ""
+                } 
+            ],
+            "branches": [
+                {
+                    "latitude": "",
+                    "longtitude": "",
+                    "address": ""
+                }            
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /course/{id}
+
+    + Body
+
+            {
+                "id": 1,
+                "name": "English zone",
+                "description": "Миссия English Zone заключается в том, чтобы помочь людям раскрыть весь их потенциал.",
+                "category": "Language course",
+                "logo": "http://www.answersfrom.com/wp-content/uploads/2011/09/Not-talanted-but-curious.jpg",
+                "contacts": [
+                    {
+                        "type": "PHONE",
+                        "value": "0555123456"
+                    },
+                    {
+                        "type": "EMAIL",
+                        "value": "example@gmail.com"
+                    }
+                ],
+                "branches": [
+                    {
+                        "latitude": "42.847971",
+                        "longtitude": "74.586733",
+                        "address": "Manas 58/ Aini - right next to the Manas university"
+                    }
+                ]
+            }
