@@ -3,8 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer, CourseSerializer
-from .models import Course, Contact, Category, Branch
+from Course.serializers import UserSerializer, GroupSerializer, CourseSerializer
+from Course.models import Course, Contact, Category, Branch
 
 class UserViewSet(viewsets.ModelViewSet):
     """

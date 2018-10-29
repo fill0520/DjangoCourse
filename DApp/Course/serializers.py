@@ -38,12 +38,12 @@ class CourseSerializer(serializers.HyperlinkedModelSerializer):
 	def create(self, validated_data):
 		course_br = validated_data.pop('branches')
 		course_con = validated_data.pop('contacts')
-		course = Course.objects.create(**validated_data, category=Category.objects.get(pk=1))
+		course = Course.objects.create(category=Category.objects.get(pk=1), **validated_data)
 		for data in course_con:
 			Contact.objects.create(course=course, **data)
 		for data in course_br:
 			Branch.objects.create(course=course, **data)
 		return course
-
+	
 
 		

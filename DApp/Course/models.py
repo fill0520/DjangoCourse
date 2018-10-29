@@ -22,7 +22,8 @@ class Branch(models.Model):
 	longtitude = models.CharField(max_length=50)
 	address = models.CharField(max_length=200)
 	course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='branches')
-
+	def __str__(self):
+		return self.address.split()[0]
 ch = (
 	('EMAIL','EMAIL'),
 	('FACEBOOK','FACEBOOK'),

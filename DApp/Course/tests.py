@@ -29,12 +29,15 @@ class CourseModelTest(TestCase):
 			value='root@roor.com'
 		)
 		c.branches.create(
-			latitude='test_cases',
+			latitude='test_cases1',
 			longtitude='test_cases',
-			address='test_cases'
+			address='test cases'
 		)
+
 		self.assertTrue(isinstance(c, Course))
+		self.assertEqual(c.branches.get(pk=1), Branch.objects.get(pk=1))
 		self.assertEqual(c.contacts.get(pk=1).type, 'EMAIL')
+
 
 	def test_create_course_2(self):
 		c = self.create_course()
@@ -45,12 +48,12 @@ class CourseModelTest(TestCase):
 		c.contacts.create(
 			type='FACEBOOK',
 			value='face'
-		)
+		) 
 		c.branches.create(
 			latitude='test_cases',
 			longtitude='test_cases',
 			address='test_cases'
 		)
 		self.assertEqual(c.contacts.get(pk=1).value, 'root@roor.com')
-		self.assertEqual(c.contacts.get(pk=2).type, 'FACEBOOK')
+		self.assertEqual(c.contacts.get(pk=2).type, Contact.objects.get(pk=2).type)
 		self.assertEqual(c.branches.get(pk=1).address, 'test_cases')
