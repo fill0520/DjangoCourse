@@ -1,0 +1,5 @@
+Django==2.0.9
+djangorestframework==3.9.0
+psycopg2==2.7.5
+python-decouple==3.1
+pytz==2018.6
