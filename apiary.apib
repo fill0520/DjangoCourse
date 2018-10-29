@@ -81,25 +81,25 @@ logo and array of contacts and branches)
 + Request (application/json)
 
         {
-            "name": "",
-            "description": "",
-            "logo": "",
+            "name": "English zone",
+            "description": "Миссия English Zone заключается в том, чтобы помочь людям раскрыть весь их потенциал.",
+            "logo": "http://www.answersfrom.com/wp-content/uploads/2011/09/Not-talanted-but-curious.jpg",
             "contacts": [
                 {
-                    "choises": [
-                        "EMAIL",
-                        "FACEBOOK",
-                        "PHONE"
-                    ],
-                    "value": ""
-                } 
+                    "type": "PHONE",
+                    "value": "0555123456"
+                },
+                {
+                    "type": "EMAIL",
+                    "value": "example@gmail.com"
+                }
             ],
             "branches": [
                 {
-                    "latitude": "",
-                    "longtitude": "",
-                    "address": ""
-                }            
+                    "latitude": "42.847971",
+                    "longtitude": "74.586733",
+                    "address": "Manas 58/ Aini - right next to the Manas university"
+                }
             ]
         }
 
@@ -107,7 +107,7 @@ logo and array of contacts and branches)
 
     + Headers
 
-            Location: /course/{id}
+            Location: /course/1
 
     + Body
 
@@ -117,7 +117,7 @@ logo and array of contacts and branches)
                 "description": "Миссия English Zone заключается в том, чтобы помочь людям раскрыть весь их потенциал.",
                 "category": "Language course",
                 "logo": "http://www.answersfrom.com/wp-content/uploads/2011/09/Not-talanted-but-curious.jpg",
-                "contacts": [
+                "contacts": [ix 
                     {
                         "type": "PHONE",
                         "value": "0555123456"
